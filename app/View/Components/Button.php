@@ -7,7 +7,6 @@ use Illuminate\View\Component;
 class Button extends Component
 {
     public string $variant;
-    public string $size;
     public bool $disabled;
     public ?string $route;
     public array $params;
@@ -17,7 +16,6 @@ class Button extends Component
 
     public function __construct(
         string $variant = 'gray',
-        string $size = 'md',
         bool $disabled = false,
         ?string $route = null,
         array $params = [],
@@ -26,7 +24,6 @@ class Button extends Component
         string $iconPosition = 'left' // 'left' ou 'right'
     ) {
         $this->variant = $variant;
-        $this->size = $size;
         $this->disabled = $disabled;
         $this->route = $route;
         $this->params = $params;

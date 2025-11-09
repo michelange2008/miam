@@ -20,36 +20,39 @@
         @endif
     </head>
     <body class="bg-[#FDFDFC] dark:bg-[#0a0a0a] text-[#1b1b18] flex p-6 lg:p-8 items-center lg:justify-center min-h-screen flex-col">
-        <div class="flex flex-col items-center justify-center w-full transition-opacity opacity-100 duration-750 lg:grow starting:opacity-0">
-            <div class="flex max-w-[335px] w-full flex-col-reverse lg:max-w-4xl lg:flex-row">
+        <div class="flex flex-col items-center justify-center w-full transition-opacity opacity-100 duration-750 lg:grow starting:opacity-0 gap-3 text-center">
+            <div class="flex max-w-[335px] w-full flex-col-reverse md:max-w-4xl md:flex-row">
                     <img class="w-full h-full object-cover" src="{{ asset('storage/img/miam.svg') }}" alt="maim">
-            </div>
+                </div>
+                <div  class="flex max-w-[335px] w-full flex-col-reverse md:max-w-4xl md:flex-row">
+                    <img src="{{ asset('storage/img/logo.svg') }}" alt="">
+                </div>
             <div>
                 <p class="p-6 text-xl">
-                    Application d'aide à la décision en alimentation des ruminants
+                    Aide à la décision en alimentation des ruminants
                 </p>
             </div>
             
             <div class="w-full lg:max-w-4xl max-w-[335px] text-sm p-4 not-has-[nav]:hidden">
                 <nav class="flex items-center justify-center gap-4">
                 @if (Route::has('login'))
-                        @auth
-                            <x-button route='dashboard'>Accueil</x-button>
-                            <a
-                                href="{{ url('/dashboard') }}"
-                                class="inline-block px-5 py-1.5 dark:text-[#EDEDEC] border-lightgray hover:border-black border text-[#1b1b18] dark:border-[#3E3E3A] dark:hover:border-[#62605b] rounded-sm text-sm leading-normal"
-                                >
-                                Dashboard
-                            </a>
-                            @else
-                            <x-button route='login' icon="check">Se connecter</x-button>
-                             
-                            @if (Route::has('register'))
-                            <x-button route='register'>S'enregistrer</x-button>
-                       @endif
-                        @endauth
+                    @auth
+                        <x-button route='dashboard'>Accueil</x-button>
+                        <a
+                            href="{{ url('/dashboard') }}"
+                            class="inline-block px-5 py-1.5 dark:text-[#EDEDEC] border-lightgray hover:border-black border text-[#1b1b18] dark:border-[#3E3E3A] dark:hover:border-[#62605b] rounded-sm text-sm leading-normal"
+                            >
+                            Dashboard
+                        </a>
+                    @else
+                        <x-button variant=green route='login' icon="check">Connexion</x-button>
+                        
+                        @if (Route::has('register'))
+                            <x-button variant=gray route='register'>s'inscrire</x-button>
                         @endif
-                        <x-button route='infos' icon="plus">Plus d'informations</x-button>
+                    @endauth
+                @endif
+                    <x-button variant="orange" route='infos' icon="plus">Infos</x-button>
                 </nav>
 
             </div>

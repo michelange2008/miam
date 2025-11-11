@@ -25,7 +25,7 @@
                     <img class="w-full h-full object-cover" src="{{ asset('storage/img/miam.svg') }}" alt="maim">
                 </div>
                 <div  class="flex max-w-[335px] w-full flex-col-reverse md:max-w-4xl md:flex-row">
-                    <img src="{{ asset('storage/img/logo.svg') }}" alt="">
+                    <img src="{{ asset('storage/img/grand_logo.svg') }}" alt="">
                 </div>
             <div>
                 <p class="p-6 text-xl">

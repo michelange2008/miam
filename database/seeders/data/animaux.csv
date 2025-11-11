@@ -1,0 +1,29 @@
+race;production;espece
+Prim’Holstein;lait;bovin
+Montbéliarde;lait;bovin
+Normande;lait;bovin
+Jersiaise;lait;bovin
+Abondance;lait;bovin
+Autre bovin lait;lait;bovin
+Charolaise;allaitant;bovin
+Limousine;allaitant;bovin
+Salers;allaitant;bovin
+Blonde d’Aquitaine;allaitant;bovin
+Aubrac;allaitant;bovin
+Autre bovin allaitant;allaitant;bovin
+Préalpes;allaitant;ovin
+Mérinos;allaitant;ovin
+BMC;allaitant;ovin
+Noire du Velay;allaitant;ovin
+Mourerous;allaitant;ovin
+Autre brebis allaitante;allaitant;ovin
+Lacaune;lait;ovin
+Basco-béarnaise;lait;ovin
+Manech;lait;ovin
+Corse;lait;ovin
+Brisgasque;lait;ovin
+Autre brebis laitière;lait;caprin
+Saanen;lait;caprin
+Alpine;lait;caprin
+Massif central;lait;caprin
+Autre chèvre laitère;lait;caprin

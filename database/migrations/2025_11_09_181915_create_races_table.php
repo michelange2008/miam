@@ -11,10 +11,11 @@ return new class extends Migration
      */
     public function up(): void
     {
+        // database/migrations/xxxx_create_races_table.php
         Schema::create('races', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->foreignId('espece_id')->constrained()->cascadeOnDelete(); // facultatif mais logique
+            $table->foreignId('production_id')->constrained()->onDelete('cascade');
             $table->timestamps();
         });
     }

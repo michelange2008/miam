@@ -11,9 +11,11 @@ return new class extends Migration
      */
     public function up(): void
     {
+        // database/migrations/xxxx_create_productions_table.php
         Schema::create('productions', function (Blueprint $table) {
             $table->id();
-            $table->string('name'); // lait, viande
+            $table->string('name');
+            $table->foreignId('espece_id')->constrained()->onDelete('cascade');
             $table->timestamps();
         });
     }

@@ -13,7 +13,8 @@ return new class extends Migration
     {
         Schema::create('physiologies', function (Blueprint $table) {
             $table->id();
-            $table->string('name'); // tarissement, gestation, lactation, engrais
+            $table->string('name');
+            $table->foreignId('race_id')->constrained()->onDelete('cascade');
             $table->timestamps();
         });
     }

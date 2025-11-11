@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\InfosController;
+use App\Http\Controllers\RationController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -18,6 +19,12 @@ Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+
+    // routes/web.php
+    Route::get('/miam', [RationController::class, 'index'])->name('miam.form');
+    Route::get('/miam/especes/{espece}/productions', [RationController::class, 'getProductions']);
+    Route::get('/miam/productions/{production}/races', [RationController::class, 'getRaces']);
+    Route::get('/miam/races/{race}/physiologies', [RationController::class, 'getPhysiologies']);
 });
 
-require __DIR__.'/auth.php';
+require __DIR__ . '/auth.php';

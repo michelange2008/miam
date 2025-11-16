@@ -15,7 +15,16 @@
                 <div class="bg-vertfonce text-white p-3">
                     <h2 class="font-bold">Troupeau ou lot</h2>
                 </div>
-                <!-- contenu ici -->
+                @if (session()->has('troupeau'))
+                @php
+                    $troupeau = session('troupeau')
+                @endphp
+                    <p>Espèce : {{ $troupeau['espece']->name }}</p>
+                    <p>Production : {{ session('troupeau.production')->name }}</p>
+                    <p>Race : {{ session('troupeau.race')->name }}</p>
+                    <p>Physiologie : {{ session('troupeau.physiologie_id') }}</p>
+                @endif
+
             </div>
 
             <!-- Panneau central : détail de la ration -->

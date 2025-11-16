@@ -9,10 +9,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
-
 Route::get('/infos', [InfosController::class, 'index'])->name('infos');
 
 Route::middleware('auth')->group(function () {
@@ -20,11 +16,15 @@ Route::middleware('auth')->group(function () {
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 
-    // routes/web.php
-    Route::get('/miam', [RationController::class, 'index'])->name('miam.form');
-    Route::get('/miam/especes/{espece}/productions', [RationController::class, 'getProductions']);
-    Route::get('/miam/productions/{production}/races', [RationController::class, 'getRaces']);
-    Route::get('/miam/races/{race}/physiologies', [RationController::class, 'getPhysiologies']);
+});
+
+Route::middleware('auth', 'verified')->group(function() {
+    Route::get('/', [RationController::class, 'index'])->name('miam.index');
+    Route::get('/nouvelle_ration', [RationController::class, 'nouveau'])->name('miam.nouveau');
+    Route::post('/set-troupeau', [RationController::class, 'setTroupeau'])->name('set-troupeau');
+    Route::get('/especes/{espece}/productions', [RationController::class, 'getProductions']);
+    Route::get('/productions/{production}/races', [RationController::class, 'getRaces']);
+    Route::get('/races/{race}/physiologies', [RationController::class, 'getPhysiologies']);
 });
 
 require __DIR__ . '/auth.php';
